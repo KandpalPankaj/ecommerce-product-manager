@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# E-commerce Product Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive React application for managing e-commerce products with advanced features including drag-and-drop functionality, discount management, and product variant handling. Built with **Tailwind CSS** for modern, responsive styling.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+### Core Functionality
 
-### `npm start`
+- **Product Management**: Add, edit, and remove products from your inventory
+- **Variant Support**: Handle products with single or multiple variants
+- **Discount System**: Apply percentage or flat rate discounts to products and variants
+- **Drag & Drop**: Reorder products and variants with intuitive drag-and-drop interface
+- **Search & Filter**: Real-time product search with API integration
+- **Infinite Scroll**: Seamless pagination for large product catalogs
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Advanced Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Product Picker Modal**: Interactive dialog for selecting products from your store
+- **API Integration**: Connects to external product APIs with fallback support
+- **Responsive Design**: Works seamlessly across different screen sizes with Tailwind CSS
+- **Visual Feedback**: Smooth animations and clear interaction states
+- **Error Handling**: Robust error handling with graceful fallbacks
 
-### `npm test`
+### 🎨 Design & Styling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Custom Components**: Reusable component classes with Tailwind's @layer directive
+- **Responsive Design**: Mobile-first approach with responsive breakpoints
+- **Dark Mode Ready**: Built with Tailwind's design system for easy theme switching
+- **Accessible**: Proper focus states and semantic HTML structure
 
-### `npm run build`
+## 🛠️ Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (version 14 or higher)
+- npm or yarn package manager
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup Instructions
 
-### `npm run eject`
+1. **Clone the repository**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone https://github.com/yourusername/ecommerce-product-manager.git
+   cd ecommerce-product-manager
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install dependencies**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Install Tailwind CSS** (if not already installed)
 
-## Learn More
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Start the development server**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-### Code Splitting
+5. **Open your browser**
+   Navigate to `http://localhost:3000` to view the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎨 Tailwind CSS Features
 
-### Analyzing the Bundle Size
+### Custom Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The application uses Tailwind's `@layer` directive to create reusable component classes:
 
-### Making a Progressive Web App
+```css
+@layer components {
+  .drag-handle {
+    @apply cursor-grab active:cursor-grabbing;
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  .product-card {
+    @apply border border-gray-200 rounded-lg p-4 transition-all duration-200;
+  }
 
-### Advanced Configuration
+  .btn-primary {
+    @apply bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200;
+  }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Responsive Design
 
-### Deployment
+- Mobile-first approach with responsive breakpoints
+- Flexible layouts using Tailwind's flexbox and grid utilities
+- Responsive spacing and typography
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Custom Utilities
 
-### `npm run build` fails to minify
+- Custom scrollbar styling for better UX
+- Extended color palette for brand consistency
+- Custom animations and transitions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🎯 Usage
+
+### Adding Products
+
+1. Click the "Add Product" button to create a new product slot
+2. Click the edit icon to open the product picker
+3. Search and select products from the available inventory
+4. Apply discounts as needed
+
+### Managing Variants
+
+- Products with multiple variants show a "Show variants" button
+- Expand variants to apply individual discounts
+- Drag and drop variants to reorder them within a product
+
+### Drag and Drop
+
+- **Products**: Drag the grip handle to reorder products in the list
+- **Variants**: When expanded, drag variants to reorder within their product
+- Visual feedback shows valid drop zones during drag operations
+
+### Discount System
+
+- Choose between percentage (%) or flat rate ($) discounts
+- Apply discounts at the product level or individual variant level
+- Discounts can be different for each product and variant
+
+## 🔧 API Integration
+
+The application integrates with the Monk Commerce API:
+
+**Endpoint**: `https://stageapi.monkcommerce.app/task/products/search`
+
+**Parameters**:
+
+- `search`: Search term for filtering products
+- `page`: Page number for pagination
+- `limit`: Number of products per page
+
+**Features**:
+
+- Real-time search with 300ms debouncing
+- Scroll-based pagination for smooth user experience
+
+### Building for Production
+
+Tailwind automatically purges unused styles in production:
+
+```bash
+npm run build
+```
+
+This creates an optimized bundle with only the CSS classes actually used in your components.
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+npm test
+# or
+yarn test
+```
+
+## 📦 Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+**Made with ❤️ for e-commerce store owners**
